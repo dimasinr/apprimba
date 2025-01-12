@@ -18,8 +18,8 @@ API User adalah aplikasi backend berbasis **Node.js** dan **Express** yang menye
 - **Node.js**: Menjalankan aplikasi backend.
 - **Express**: Framework untuk membangun RESTful API.
 - **Sequelize**: ORM untuk mengelola database SQL.
-- **MySQL**: Database relasional untuk menyimpan data pengguna.
-- **Docker & Docker Compose**: Menyediakan lingkungan container untuk aplikasi dan database.
+- **MySQL**: Database untuk menyimpan data pengguna.
+- **Docker & Docker Compose**: Untuk lingkungan container untuk aplikasi dan database.
 - **Jest**: Framework untuk pengujian aplikasi.
 
 ---
@@ -31,7 +31,7 @@ API User adalah aplikasi backend berbasis **Node.js** dan **Express** yang menye
 Pastikan perangkat lunak berikut telah terpasang di sistem Anda:
 
 - **Node.js** (versi ≥ 18)
-- **Docker** dan **Docker Compose** (opsional, untuk menjalankan aplikasi dalam container)
+- **Docker** dan **Docker Compose** 
 
 ---
 
