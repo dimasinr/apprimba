@@ -5,6 +5,7 @@ const getAllUsers = async (req, res) => {
     const users = await User.findAll();
     res.status(200).json(users);
   } catch (error) {
+    console.error('Error:', error);
     res.status(500).json({ error: error.message });
   }
 };

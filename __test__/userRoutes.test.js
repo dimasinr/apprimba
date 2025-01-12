@@ -1,5 +1,22 @@
 const request = require('supertest');
 const app = require('../src/index'); 
+// const User = require('../src/models/User'); 
+
+// beforeAll(async () => {
+//   await sequelize.sync({ force: true }); 
+// });
+
+// beforeEach(async () => {
+//   await User.destroy({ where: {} });
+//   await User.bulkCreate([
+//     { id: '123', name: 'Alice', email: 'alice@gmail.com', age: 25 },
+//     { id: '456', name: 'Bob', email: 'bob@gmail.com', age: 30 },
+//   ]);
+// });
+
+// afterAll(async () => {
+//   await sequelize.close(); 
+// });
 
 describe('API User', () => {
 
