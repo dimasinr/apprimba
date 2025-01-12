@@ -22,6 +22,7 @@ describe('API User', () => {
     expect(response.status).toBe(201);
     expect(response.body.name).toBe(newUser.name);
     expect(response.body.email).toBe(newUser.email);
+    expect(response.body.age).toBe(newUser.age);
 
     userId = response.body.id;
   });
@@ -43,11 +44,12 @@ describe('API User', () => {
     expect(response.status).toBe(200);
     expect(response.body.name).toBe(updatedUser.name);
     expect(response.body.email).toBe(updatedUser.email);
+    expect(response.body.age).toBe(updatedUser.age);
   });
 
   it('akan menghapus user', async () => {
     const response = await request(app).delete(`/users/${userId}`);
-    expect(response.status).toBe(200);
+    expect(response.status).toBe(204);
   });
 
 });

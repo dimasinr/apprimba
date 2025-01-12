@@ -12,7 +12,7 @@ const { getAllUsers, getUserById, createUser, updateUser, deleteUser } = require
  *       200:
  *         description: A list of users.
  */
-router.get('/users', getAllUsers);
+router.get('/', getAllUsers);
 
 /**
  * @swagger
@@ -30,7 +30,7 @@ router.get('/users', getAllUsers);
  *       200:
  *         description: A single user object.
  */
-router.get('/users/:id', getUserById);
+router.get('/:id', getUserById);
 
 /**
  * @swagger
@@ -54,7 +54,7 @@ router.get('/users/:id', getUserById);
  *       201:
  *         description: User created successfully.
  */
-router.post('/users', createUser);
+router.post('/', createUser);
 
 /**
  * @swagger
@@ -85,7 +85,7 @@ router.post('/users', createUser);
  *       200:
  *         description: User updated successfully.
  */
-router.put('/users/:id', updateUser);
+router.put('/:id', updateUser);
 
 /**
  * @swagger
@@ -103,6 +103,6 @@ router.put('/users/:id', updateUser);
  *       200:
  *         description: User deleted successfully.
  */
-router.delete('/users/:id', deleteUser);
+router.delete('/:id', deleteUser);
 
 module.exports = router;

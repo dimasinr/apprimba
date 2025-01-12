@@ -11,22 +11,33 @@ app.use(express.json());
 swaggerDocs(app);
 
 sequelize.authenticate()
-  .then(() => console.log('Database connected.'))
-  .catch(err => console.error('Unable to connect to database:', err));
+  .then(() => {
+    console.log('Database connected.');
 
-sequelize.sync({ force: false })
-  .then(() => console.log('Database synchronized.'))
-  .catch(err => console.error('Error syncing database:', err));
+    sequelize.sync({ force: false })
+      .then(() => {
+        console.log('Database synchronized.');
+        
+        const PORT = process.env.PORT || 3000;
+        app.listen(PORT, () => {
+          console.log(`Server running on port ${PORT}`);
+        });
+      })
+      .catch(err => {
+        console.error('Error syncing database:', err);
+        process.exit(1);
+      });
+  })
+  .catch(err => {
+    console.error('Unable to connect to database:', err);
+    process.exit(1); 
+  });
 
 app.get('/', (req, res) => {
-  console.log(req)
   const data = { message: 'Hello' };
   return res.status(200).json(data);
 });
 
 app.use('/users', user_routes);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-module.exports = app; 
+module.exports = app;
