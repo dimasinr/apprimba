@@ -10,7 +10,7 @@ const { getAllUsers, getUserById, createUser, updateUser, deleteUser } = require
  *     summary: Get all users
  *     responses:
  *       200:
- *         description: A list of users.
+ *         description: list users.
  */
 router.get('/', getAllUsers);
 

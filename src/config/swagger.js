@@ -15,8 +15,10 @@ const options = {
       },
     ],
   },
-  apis: ['../router/user'], 
+  apis: ['./src/router/*.js'], 
 };
+
+console.log('Swagger options:', options);
 
 const swaggerSpec = swaggerJSDoc(options);
 
