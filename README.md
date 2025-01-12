@@ -45,7 +45,7 @@ Pastikan perangkat lunak berikut telah terpasang di sistem Anda:
    cd apprimba
    ```
 
-2. Pastikan MySQL berjalan di port `3306`, lalu buat database baru dengan nama `rimba`:
+2. MySQL dengan port `3306`, lalu buat database baru dengan nama `rimba`:
    ```sql
    CREATE DATABASE rimba;
    ```
