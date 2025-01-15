@@ -45,9 +45,12 @@ Pastikan perangkat lunak berikut telah terpasang di sistem Anda:
    cd apprimba
    ```
 
-2. MySQL dengan port `3306`, lalu buat database baru dengan nama `rimba`:
+2. MySQL dengan port `3306`, masuk dengan user root lalu buat database baru dengan nama `rimba`:
    ```sql
    CREATE DATABASE rimba;
+   USE mysql;
+   CREATE USER 'dimas'@'localhost' IDENTIFIED BY 'dimas123';
+   GRANT ALL PRIVILEGES ON rimba.* TO 'dimas'@'localhost' WITH GRANT OPTION;
    ```
 
 3. Instal dependensi aplikasi:
@@ -58,6 +61,10 @@ Pastikan perangkat lunak berikut telah terpasang di sistem Anda:
 4. Jalankan aplikasi:
    ```bash
    npm start
+   ```
+   Jika ingin melakukan test jalankan :
+   ```bash
+   npm run test
    ```
 
 5. Akses API di browser:
