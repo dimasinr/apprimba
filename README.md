@@ -51,7 +51,9 @@ Pastikan perangkat lunak berikut telah terpasang di sistem Anda:
    USE mysql;
    CREATE USER 'dimas'@'localhost' IDENTIFIED BY 'dimas123';
    GRANT ALL PRIVILEGES ON rimba.* TO 'dimas'@'localhost' WITH GRANT OPTION;
+   
    ```
+   Lalu keluar kemudian kembali ke cmd di dir apprimba tadi kemudian lakukan langkah selanjutnya
 
 3. Instal dependensi aplikasi:
    ```bash
