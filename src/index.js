@@ -4,11 +4,14 @@ const express = require('express');
 const sequelize = require('./config/sequelize');
 const user_routes = require('./router/user');
 const swaggerDocs = require('./config/swagger');
+const {requestMiddleware} = require('./middlewares/requestMiddleware');
 
 const app = express();
 app.use(express.json());
 
 swaggerDocs(app);
+
+app.use(requestMiddleware);
 
 sequelize.authenticate()
   .then(() => {

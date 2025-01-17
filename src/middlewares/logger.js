@@ -1,12 +1,15 @@
-const fs = require('fs');
-const path = require('path');
+const { createLogger, format, transports } = require('winston');
 
-const logFile = path.join(__dirname, '../logging/requests.log');
-
-const logger = (req, res, next) => {
-  const logEntry = `${new Date().toISOString()} - ${req.method} ${req.url} - ${req.ip}\n`;
-  fs.appendFileSync(logFile, logEntry);
-  next();
-};
+const logger = createLogger({
+  format: format.combine(
+    format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+    format.printf(({ timestamp, level, message }) => {
+      return `${timestamp} [${level.toUpperCase()}]: ${message}`;
+    })
+  ),
+  transports: [
+    new transports.File({ filename: 'logging/requests.log' }),
+  ],
+});
 
 module.exports = logger;
